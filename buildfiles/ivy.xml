@@ -1,0 +1,90 @@
+<!--
+SPDX-FileCopyrightText: Copyright 2020 | CSI Piemonte
+SPDX-License-Identifier: EUPL-1.2
+-->
+<ivy-module version="2.0">
+  <info organisation="csipiemonte" module="archtest"/>
+  <configurations>
+  <conf name="runtime"  description="required for execution"/>
+  <conf name="provided" description="the JDK or a container are expected to provide the dependency at runtime"/>
+  <conf name="compile"  description="required for compilation of the application classes" extends="runtime, provided"/>
+  <conf name="test"     description="required for junit testing"/>
+  <conf name="src"      description="dependencies sources"/>
+  <conf name="dev"      description="required for source generation"/>
+
+  </configurations>
+ 
+  <dependencies>
+
+    <dependency org="lowagie" name="com.lowagie.text" rev="2.1.7" transitive="false" conf="provided->default"/>
+
+    <dependency org="csipiemonte" name="siac-coritf" rev="4.8.0" changing="true" transitive="false" conf="provided->default"/>
+    <dependency org="csipiemonte" name="siac-common" rev="4.10.0" changing="true" transitive="false" conf="provided->default"/>
+
+    <dependency org="others" name="thoughtworks" rev="1.4.2" transitive="false" conf="provided->default">
+      <artifact name="xstream-1.4.2" type="jar"/>
+    </dependency>
+
+ 
+
+	<dependency org="eclipse" name="org.eclipse.core.contenttype"  rev="3.4.200" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.core.expressions"  rev="3.4.401" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.core.filesystem"  rev="1.3.200" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.core.jobs" rev="3.5.300"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.core.resources"  rev="3.8.1" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.core.runtime"  rev="3.8.0" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.apache.derby.dbdefinition"  rev="1.0.2" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.apache.derby" rev="1.0.103"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.console.profile" rev="1.0.10"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.db.generic" rev="1.0.1"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.dbdefinition.genericJDBC"  rev="1.0.1" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.oda.consumer" rev="3.2.5"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.oda.design" rev="3.3.6"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.oda.flatfile" rev="3.1.4"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.oda.profile" rev="3.2.8"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.connectivity.oda"  rev="3.3.4" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.connectivity.sqm.core" rev="1.2.6"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.connectivity"  rev="1.2.7" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.hsqldb.dbdefinition" rev="1.0.0"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.enablement.hsqldb"  rev="1.0.0" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.ibm.db2.luw.dbdefinition" rev="1.0.4"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.ibm.db2.luw" rev="1.0.2"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.ibm.informix.dbdefinition" rev="1.0.4"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.ibm.informix" rev="1.0.1"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.msft.sqlserver.dbdefinition"  rev="1.0.1" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.mysql.dbdefinition" rev="1.0.4"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.enablement.mysql"  rev="1.0.4" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.enablement.oda.ws"  rev="1.2.4" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.enablement.oda.xml"  rev="1.2.4" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.oracle.dbdefinition" rev="1.0.103"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.enablement.oracle"  rev="1.0.0" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.postgresql.dbdefinition" rev="1.0.2"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.enablement.postgresql" rev="1.1.1"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse"  name="org.eclipse.datatools.modelbase.dbdefinition" rev="1.0.2"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.modelbase.derby"  rev="1.0.0" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.modelbase.sql.query"  rev="1.1.4" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.datatools.modelbase.sql"  rev="1.0.6" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.emf.common" rev="2.8.0"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.emf.ecore.change"  rev="2.8.0" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.emf.ecore.xmi"  rev="2.8.1" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.emf.ecore" rev="2.8.3"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.emf" rev="2.6.0"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.equinox.app"  rev="1.3.100" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.equinox.common"  rev="3.6.100" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.equinox.preferences"  rev="3.5.1" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.equinox.registry"  rev="3.5.200" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.osgi.services"  rev="3.3.100" transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.osgi" rev="3.8.2"  transitive="false" conf="runtime->default" />
+	<dependency org="eclipse" name="org.eclipse.update.configurator" rev="3.3.200" transitive="false" conf="runtime->default" />
+
+ 	<dependency org="eclipse" name="org.eclipse.birt.runtime"  rev="4.2.2" transitive="false" conf="runtime->default" >
+ 		<artifact name="org.eclipse.birt.runtime-unsigned-4.2.2" 								 type="jar" />
+ 	</dependency>
+
+	<dependency org="others" name="thoughtworks" rev="1.4.2" transitive="false" conf="provided->default">
+		<artifact name="xstream-1.4.2" type="jar"/>
+	</dependency>
+
+
+  </dependencies>
+</ivy-module>
